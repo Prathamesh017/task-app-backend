@@ -28,7 +28,9 @@ app.use(
     credentials: true
   })
 )
-
+app.get("/",(req,res)=>{
+  res.send("app is running");
+})
 app.use('/api/v1/user', usersRouter)
 app.use('/api/v1/task', taskRouter)
 
