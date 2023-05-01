@@ -22,7 +22,12 @@ export const registerController = async (req, res) => {
     if (user) {
       return res.status(200).json({
         status: 'Success',
-        data: user,
+        data: {
+          _id: user._id,
+          name: user.name,
+          email: user.email,
+          token: user.token
+        },
         message: 'User Register Successfully'
       })
     } else {
